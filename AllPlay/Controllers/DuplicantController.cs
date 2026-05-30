@@ -1,8 +1,8 @@
 using System.Net;
 using System.Threading.Tasks;
-using mcp;
+using AllPlay.Mcp;
 
-namespace controllers
+namespace AllPlay.Controllers
 {
     [McpRoutePrefix("duplicant")]
     public class DuplicantController
@@ -10,7 +10,7 @@ namespace controllers
         [McpRoute("GET", "info")]
         public static async Task GetAllInfo(HttpListenerRequest req, HttpListenerResponse res)
         {
-            var duplicantService = new service.DuplicantService();
+            var duplicantService = new Service.DuplicantService();
             var info = duplicantService.GetAllInfo();
 
             await McpHttpServer.SendResponse(res, info);
@@ -25,7 +25,7 @@ namespace controllers
 
             var id = query["id"];
             var name = query["name"];
-            var duplicantService = new service.DuplicantService();
+            var duplicantService = new Service.DuplicantService();
 
             if (int.TryParse(id, out int duplicantId))
             {

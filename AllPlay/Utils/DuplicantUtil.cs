@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace utils
+namespace AllPlay.Utils
 {
     // TODO 复制人相关工具
     public class DuplicantUtil
@@ -50,23 +50,23 @@ namespace utils
         }
 
         // 获取角色的当前坐标
-        public model.Coor GetXY(int id)
+        public Model.Coor GetXY(int id)
         {
             var minion = GetMinion(id);
             var coor = minion.transform.position;
-            return new model.Coor(coor.x, coor.y);
+            return new Model.Coor(coor.x, coor.y);
         }
 
         // TODO 获取所有复制人信息
-        public List<model.DuplicantInfo> GetAllInfo()
+        public List<Model.DuplicantInfo> GetAllInfo()
         {
-            var info = new List<model.DuplicantInfo>(minions.Count());
+            var info = new List<Model.DuplicantInfo>(minions.Count());
             for (int i = 0; i < minions.Count(); i++)
             {
-                var user = new model.DuplicantInfo();
+                var user = new Model.DuplicantInfo();
                 user.Id = minions[i].GetInstanceID();
                 user.Name = minions[i].GetProperName();
-                user.coor = new model.Coor(
+                user.coor = new Model.Coor(
                     minions[i].transform.position.x,
                     minions[i].transform.position.y
                 );

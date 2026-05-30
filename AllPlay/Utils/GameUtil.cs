@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace utils
+namespace AllPlay.Utils
 {
     // 一些关于游戏初始化的一些设置
     public class GameUtil

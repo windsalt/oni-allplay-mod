@@ -1,4 +1,4 @@
-namespace service
+namespace AllPlay.Service
 {
     public class GameService
     {

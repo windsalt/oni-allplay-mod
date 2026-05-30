@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using KMod;
 
-namespace allplay
+namespace AllPlay
 {
     public class AllPlayModInfo : UserMod2
     {
@@ -9,7 +9,7 @@ namespace allplay
         {
             base.OnLoad(harmony);
 
-            mcp.McpHttpServer.Start();
+            Mcp.McpHttpServer.Start();
         }
     }
 }

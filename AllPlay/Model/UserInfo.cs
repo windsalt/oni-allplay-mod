@@ -1,4 +1,4 @@
-namespace model
+namespace AllPlay.Model
 {
     public struct DuplicantInfo
     {

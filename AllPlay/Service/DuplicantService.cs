@@ -1,12 +1,10 @@
 using System.Collections.Generic;
-using System.ComponentModel;
-using utils;
 
-namespace service
+namespace AllPlay.Service
 {
     public class DuplicantService
     {
-        private readonly DuplicantUtil duplicantUtil = new DuplicantUtil();
+        private readonly Utils.DuplicantUtil duplicantUtil = new Utils.DuplicantUtil();
 
         // TODO 判断是否有复制人被困住,返回复制人信息
         public void IsStuck()
@@ -14,7 +12,7 @@ namespace service
             duplicantUtil.GetAllInfo();
         }
 
-        public List<model.DuplicantInfo> GetAllInfo()
+        public List<Model.DuplicantInfo> GetAllInfo()
         {
             return duplicantUtil.GetAllInfo();
         }
