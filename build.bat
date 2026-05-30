@@ -4,7 +4,7 @@ setlocal enabledelayedexpansion
 :: ========== 配置项 ==========
 set "PROJECT_NAME=all-play"
 set "MOD_DIR=%USERPROFILE%\Documents\Klei\OxygenNotIncluded\mods\Dev\!PROJECT_NAME!"
-set "BUILD_OUTPUT=bin\Debug\netstandard2.1"
+set "BUILD_OUTPUT=bin\Debug\net48"
 :: ===========================
 
 if "%~1"=="" (
