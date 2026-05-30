@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 // 注:以下代码是ai生成的
-namespace AllPlay.mcp
+namespace mcp
 {
     [AttributeUsage(AttributeTargets.Class)]
     public class McpRoutePrefixAttribute : Attribute
