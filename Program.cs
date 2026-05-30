@@ -1,9 +1,9 @@
 ﻿using HarmonyLib;
 using KMod;
 
-namespace AllPlay
+namespace allplay
 {
-    public class ModInfo : UserMod2
+    public class AllPlayModInfo : UserMod2
     {
         public override void OnLoad(Harmony harmony)
         {
