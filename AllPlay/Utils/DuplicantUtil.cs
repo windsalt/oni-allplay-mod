@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
+using HarmonyLib;
+using KMod;
 using UnityEngine;
 
 namespace AllPlay.Utils
@@ -42,13 +44,6 @@ namespace AllPlay.Utils
             return flag;
         }
 
-        public string GetName(int id)
-        {
-            // 获取角色的名字
-            var minion = GetMinion(id);
-            return minion?.GetProperName();
-        }
-
         // 获取角色的当前坐标
         public Model.Coor GetXY(int id)
         {
@@ -66,7 +61,7 @@ namespace AllPlay.Utils
                 var user = new Model.DuplicantInfo();
                 user.Id = minions[i].GetInstanceID();
                 user.Name = minions[i].GetProperName();
-                user.coor = new Model.Coor(
+                user.Coor = new Model.Coor(
                     minions[i].transform.position.x,
                     minions[i].transform.position.y
                 );
@@ -77,16 +72,26 @@ namespace AllPlay.Utils
             return info;
         }
 
-        // TODO 判断复制人是否被困住
-        public bool IsStuck(int id)
+        public bool Add()
         {
             return false;
         }
 
+        public Model.DuplicantInfo GetInfo(int id)
+        {
+            var info = new Model.DuplicantInfo();
+            var minion = GetMinion(id);
+
+            return info;
+        }
+
+        public string GetName(int id)
+        {
+            var minion = GetMinion(id);
+            return minion.IsNull() ? "未找到复制人" : minion.GetProperName();
+        }
+
         public MinionIdentity GetMinion(int id) =>
             minions.FirstOrDefault(m => m.GetInstanceID() == id);
-
-        public MinionIdentity GetMinion(string name) =>
-            minions.FirstOrDefault(m => m.GetProperName() == name);
     }
 }

@@ -36,5 +36,9 @@ namespace AllPlay.Controllers
 
             await McpHttpServer.SendResponse(res, flag);
         }
+
+        // TODO 添加一个全新的复制人
+        [McpRoute("POST", "add")]
+        public static async Task Add(HttpListenerRequest req, HttpListenerResponse res) { }
     }
 }
